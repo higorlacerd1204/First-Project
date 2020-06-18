@@ -75,7 +75,7 @@ public class TimeMain {
 						Integer qtdJogadores = valorInseridoQtdJogadores.nextInt();
 
 						if (qtdJogadores <= 0) {
-							System.out.println("A quantidade de jogadores não pode ser nulo");
+							System.out.println("A quantidade de jogadores não pode ser negativa ou nula");
 						} else {
 
 							System.out.printf("Digite o site do time: ");
