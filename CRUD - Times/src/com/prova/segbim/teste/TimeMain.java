@@ -16,7 +16,6 @@ import com.prova.segbim.entidade.Time;
 
 public class TimeMain {
 
-	private static final Integer Integer = null;
 	private static Dao<Time> timeDao;
 
 	public static void main(String[] args) {
@@ -25,14 +24,14 @@ public class TimeMain {
 
 		while (true) {
 			System.out.println("_____________________________________________");
-			System.out.println("| OpÁ„o |               AÁ„o                |");
+			System.out.println("| Op√ß√£o |               A√ß√£o                |");
 			System.out.println("|   1   |      Cadastrar um novo time       |");
-			System.out.println("|   2   |    Alterar algum time j· criado   |");
-			System.out.println("|   3   |    Remover algum time j· criado   |");
+			System.out.println("|   2   |    Alterar algum time j√° criado   |");
+			System.out.println("|   3   |    Remover algum time j√° criado   |");
 			System.out.println("|   4   |     Listar times cadastrados      |");
 			System.out.println("|   5   |               Sair                |");
 			System.out.println("---------------------------------------------");
-			System.out.println("- Ol·, qual opÁ„o o senhor(a) deseja? ");
+			System.out.println("- Ol√°, qual op√ß√£o o senhor(a) deseja? ");
 
 			int opcao = 0;
 			Scanner valorInserido = new Scanner(System.in);
@@ -52,7 +51,7 @@ public class TimeMain {
 			try {
 				opcao = valorInserido.nextInt();
 			} catch (Exception erro) {
-				System.out.println("Escolha uma opÁ„o de 1 a 5");
+				System.out.println("Escolha uma op√ß√£o de 1 a 5");
 				System.exit(0);
 			}
 
@@ -62,35 +61,35 @@ public class TimeMain {
 				String nome = valorInseridoNomeTime.nextLine();
 
 				if (nome.isEmpty()) {
-					System.out.println("O nome n„o pode ser nulo");
+					System.out.println("O nome n√£o pode ser nulo");
 				} else {
 
-					System.out.printf("Digite o nome do tÈcnico do time: ");
+					System.out.printf("Digite o nome do t√©cnico do time: ");
 					String tecnico = valorInseridoTecnico.nextLine();
 
 					if (tecnico.isEmpty()) {
-						System.out.println("O nome do tÈcnico n„o pode ser nulo");
+						System.out.println("O nome do t√©cnico n√£o pode ser nulo");
 					} else {
 
 						System.out.printf("Digite a quantidade de jogadores do time: ");
 						Integer qtdJogadores = valorInseridoQtdJogadores.nextInt();
 
 						if (qtdJogadores <= 0) {
-							System.out.println("A quantidade de jogadores n„o pode ser nulo");
+							System.out.println("A quantidade de jogadores n√£o pode ser nulo");
 						} else {
 
 							System.out.printf("Digite o site do time: ");
 							String site = valorInseridoSite.nextLine();
 
 							if (site.isEmpty()) {
-								System.out.println("O site n„o pode ser nulo");
+								System.out.println("O site n√£o pode ser nulo");
 							} else {
 
-								System.out.printf("Digite o nome do est·dio do time: ");
+								System.out.printf("Digite o nome do est√°dio do time: ");
 								String estadio = valorInseridoEstadio.nextLine();
 
 								if (estadio.isEmpty()) {
-									System.out.println("O est·dio n„o pode ser nulo");
+									System.out.println("O est√°dio n√£o pode ser nulo");
 								} else {
 
 									int id = timeDao.getAll().size();
@@ -114,43 +113,43 @@ public class TimeMain {
 					try {
 						timeDao.getAll().forEach(
 								item -> System.out.println("ID: " + item.getId() + " TIME: " + item.getNome()));
-						System.out.println("Qual o ID do Time vocÍ deseja alterar? ");
+						System.out.println("Qual o ID do Time voc√™ deseja alterar? ");
 						long id3 = valorInserido.nextLong();
 						Optional<Time> time3 = timeDao.get(id3 - 1);
 
-						System.out.printf("Digite o nome do time que vocÍ deseja alterar: ");
+						System.out.printf("Digite o nome do time que voc√™ deseja alterar: ");
 						String nome2 = valorInseridoNomeTime2.nextLine();
 
 						if (nome2.isEmpty()) {
-							System.out.println("O nome n„o pode ser nulo");
+							System.out.println("O nome n√£o pode ser nulo");
 						} else {
 
-							System.out.printf("Digite o tÈcnico do time que vocÍ deseja alterar: ");
+							System.out.printf("Digite o t√©cnico do time que voc√™ deseja alterar: ");
 							String tecnico2 = valorInseridoTecnico2.nextLine();
 
 							if (tecnico2.isEmpty()) {
-								System.out.println("O nome do tÈcnico n„o pode ser nulo");
+								System.out.println("O nome do t√©cnico n√£o pode ser nulo");
 							} else {
 
-								System.out.printf("Digite a quantidade de jogadores do time que vocÍ deseja alterar: ");
+								System.out.printf("Digite a quantidade de jogadores do time que voc√™ deseja alterar: ");
 								Integer qtdJogadores2 = valorInseridoQtdJogadores2.nextInt();
 
 								if (qtdJogadores2 <= 0) {
-									System.out.println("A quantidade de jogadores n„o pode ser negativa ou nula");
+									System.out.println("A quantidade de jogadores n√£o pode ser negativa ou nula");
 								} else {
 
-									System.out.printf("Digite o site do time que vocÍ deseja alterar: ");
+									System.out.printf("Digite o site do time que voc√™ deseja alterar: ");
 									String site2 = valorInseridoSite2.nextLine();
 
 									if (site2.isEmpty()) {
-										System.out.println("O site n„o pode ser nulo");
+										System.out.println("O site n√£o pode ser nulo");
 									} else {
 
-										System.out.printf("Digite o est·dio do time que vocÍ deseja alterar: ");
+										System.out.printf("Digite o est√°dio do time que voc√™ deseja alterar: ");
 										String estadio2 = valorInseridoEstadio2.nextLine();
 
 										if (estadio2.isEmpty()) {
-											System.out.println("O est·dio n„o pode ser nulo");
+											System.out.println("O est√°dio n√£o pode ser nulo");
 										} else {
 
 											timeDao.update(time3.get(),
@@ -165,9 +164,9 @@ public class TimeMain {
 							}
 						}
 					} catch (InputMismatchException erro) {
-						System.out.println("Digite um n˙mero inteiro");
+						System.out.println("Digite um n√∫mero inteiro");
 					} catch (Exception erro2) {
-						System.out.println("O id inserido n„o existe, tente novamente!");
+						System.out.println("O id inserido n√£o existe, tente novamente!");
 					}
 				}
 
@@ -179,7 +178,7 @@ public class TimeMain {
 					try {
 						timeDao.getAll().forEach(
 								item -> System.out.println("ID: " + item.getId() + " TIME: " + item.getNome()));
-						System.out.println("Qual time vocÍ deseja remover? ");
+						System.out.println("Qual time voc√™ deseja remover? ");
 						long id2 = valorInseridoRemove.nextLong();
 						Optional<Time> time3 = timeDao.get(id2 - 1);
 						timeDao.remove(time3.get());
@@ -187,17 +186,17 @@ public class TimeMain {
 						System.out.println("O time foi removido com sucesso!");
 
 					} catch (InputMismatchException erro3) {
-						System.out.println("Digite um n˙mero inteiro");
+						System.out.println("Digite um n√∫mero inteiro");
 					} catch (Exception erro4) {
-						System.out.println("O id inserido n„o existe, tente novamente!");
+						System.out.println("O id inserido n√£o existe, tente novamente!");
 					}
 				}
 				break;
 			case 4:
 				timeDao.getAll()
 						.forEach(item -> System.out.println("ID: " + item.getId() + " TIME: " + item.getNome()
-								+ " T…CNICO: " + item.getTecnico() + " QUANTIDADE DE JOGADORES: " + item.getQtdJogador()
-								+ " SITE: " + item.getSite() + " EST¡DIO: " + item.getEstadio()));
+								+ " T√âCNICO: " + item.getTecnico() + " QUANTIDADE DE JOGADORES: " + item.getQtdJogador()
+								+ " SITE: " + item.getSite() + " EST√ÅDIO: " + item.getEstadio()));
 				if (timeDao.getAll().isEmpty()) {
 					System.out.println("Lista vazia");
 				}
@@ -207,7 +206,7 @@ public class TimeMain {
 				System.exit(0);
 				break;
 			default:
-				System.out.println("OpÁ„o inexistente, tente novamente!");
+				System.out.println("Op√ß√£o inexistente, tente novamente!");
 			}
 			System.out.println("Deseja continuar? [S] ou [N]");
 			String opcao2 = valorInserido.next();
@@ -218,7 +217,7 @@ public class TimeMain {
 			} else if (opcao2.equals("S") || opcao2.equals("s")) {
 
 			} else {
-				System.out.println("Caracter inv·lido, tente novamente!");
+				System.out.println("Caracter inv√°lido, tente novamente!");
 				System.out.println("Sistema Finalizado");
 				System.exit(0);
 			}
